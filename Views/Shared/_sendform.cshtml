@@ -1,0 +1,26 @@
+﻿@model Itask5.Models.Message
+@{
+    string current_user = ViewData["User"].ToString();
+}
+<form asp-action="send" id="message" method="post">
+    <input asp-for="Sender_Name" type="hidden" value="@current_user" />
+  <div class="form-group">
+    <label asp-for="Reciever_Name">Recipient name</label>
+    <input asp-for="Reciever_Name" data-url="/api/search" type="text" autocomplete="off" class="form-control" id="recipient" placeholder="Recipient name">
+    <span asp-validation-for="Reciever_Name" class="text-danger"></span>
+  </div>
+  <div class="form-group">
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title" type="text" autocomplete="off" class="form-control" id="title" placeholder="Title">
+    <span asp-validation-for="Title" class="text-danger"></span>
+  </div>
+  <div class="form-group">
+    <label asp-for="Content">Message</label>
+    <textarea asp-for="Content" autocomplete="off" class="form-control" id="message" placeholder="text message" rows="4"></textarea>
+    <span asp-validation-for="Content" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+   

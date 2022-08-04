@@ -1,0 +1,15 @@
+﻿@model Itask5.Models.ProfileViewModel
+
+@{
+    ViewData["User"] = ViewBag.User;
+    ViewData["Messages"] = ViewBag.Messages;
+}
+<h2>You're sending message as <b id="userName">@ViewData["User"]</b></h2>
+<h3>Fill in following form to send the message:</h3>
+<div id="divPartialForm">
+    @Html.Partial("_sendform", Model.message, ViewData)
+</div>
+<div id="divPartialMessages">
+    @Html.Partial("_messages", Model.Messages, ViewData)
+</div>
+
