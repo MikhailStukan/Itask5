@@ -4,13 +4,15 @@
 }
 <div>
     <h2>Your messages:</h2>
-    <table id="tableHeader" class="table">
-        <tr><th>Sender</th><th>Title</th><th>Message</th></tr>
-    </table>
     <table id="tableData" class="table">
+        <thead>
+            <tr><th>Sender</th><th>Title</th><th>Message</th></tr>
+        </thead>
+        <tbody id="messagesData">
         @foreach (var message in ViewData["Messages"] as IEnumerable<Itask5.Models.Message>)
         {
             <tr><td>@message.Sender_Name</td><td>@message.Title</td><td>@message.Content</td></tr>
         }
+        </tbody>
     </table>
 </div>

@@ -39,7 +39,7 @@ function fetchMessages() {
 
 function updateTable(response) {
     console.log(response);
-    $("#tableData").empty();
+    $("#messagesData").empty();
     for (let i = 0; i < response.length; i++) {
             appendRowOfData(response[i]);
         }
@@ -47,7 +47,7 @@ function updateTable(response) {
 
 function appendRowOfData(message) {
     console.log("Sender: " + message.sender_Name, "Id: " + message.id, "Title: " + message.title, "Content: " + message.content);
-    $("#tableData").append(
+    $("#messagesData").append(
         "<tr>" +
         "<td>" + message.sender_Name + "</td>" +
         "<td>" + message.title + "</td>" +
@@ -55,3 +55,4 @@ function appendRowOfData(message) {
         "</tr>"
         )
 };
+

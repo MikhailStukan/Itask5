@@ -12,7 +12,7 @@ namespace Itask5.Models
         public ConversationContext(DbContextOptions<ConversationContext> options) 
             : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
     }
 }
